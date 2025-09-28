@@ -70,7 +70,6 @@ Deploy the Ingress controller manifests
 
 Use the upstream manifests to deploy ingress-nginx. For example:
 
-# Apply mandatory / common manifests
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 
 
