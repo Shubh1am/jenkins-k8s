@@ -17,13 +17,14 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-          - name: http-port
-            containerPort: 8080
-          - name: jnlp-port
-            containerPort: 50000
+        - containerPort: 8080
+        env:
+        - name: JENKINS_OPTS
+          value: "--httpPort=8080"
         volumeMounts:
-          - name: jenkins-vol
-            mountPath: /var/jenkins_vol
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
       volumes:
-        - name: jenkins-vol
-          emptyDir: {}
+      - name: jenkins-home
+        persistentVolumeClaim:
+          claimName: jenkins-pvc

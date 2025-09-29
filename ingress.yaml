@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jenkins-ingress
+  namespace: jenkins
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: jenkins.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jenkins-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - jenkins.local
+      secretName: jenkins-tls
+
+# Alternative access methods:
+# 1. Use a NodePort service to access Jenkins via the node's IP and the assigned NodePort.
+# 2. Use kubectl port-forward to access Jenkins locally:
+#    kubectl port-forward svc/jenkins-service 8080:8080 -n jenkins
