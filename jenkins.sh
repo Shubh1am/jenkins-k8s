@@ -9,14 +9,14 @@ NAMESPACE=jenkins
 # kubectl get namespace $NAMESPACE >/dev/null 2>&1 || kubectl create namespace $NAMESPACE
 
 # Apply Persistent Volume and Claim
-kubectl apply -f jenkins-k8s/persistent-volume.yaml -n $NAMESPACE
-kubectl apply -f jenkins-k8s/persistent-volume-claim.yaml -n $NAMESPACE
+kubectl apply -f persistent-volume.yaml -n $NAMESPACE
+kubectl apply -f persistent-volume-claim.yaml -n $NAMESPACE
 
 # Apply Deployment and Service
-kubectl apply -f jenkins-k8s/deployment.yaml -n $NAMESPACE
-kubectl apply -f jenkins-k8s/service.yaml -n $NAMESPACE
+kubectl apply -f deployment.yaml -n $NAMESPACE
+kubectl apply -f service.yaml -n $NAMESPACE
 
 # Apply Ingress
-kubectl apply -f jenkins-k8s/ingress.yaml -n $NAMESPACE
+kubectl apply -f ingress.yaml -n $NAMESPACE
 
 echo "Jenkins deployment, service, ingress, and storage applied in namespace '$NAMESPACE'."
