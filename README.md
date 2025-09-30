@@ -65,6 +65,10 @@ Create the ingress-nginx namespace (optional / recommended)
 
 kubectl create namespace ingress-nginx
 
+**Add storage Class using the following steps: 
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+Then update the storageclass name in the persistent-volume-claim.yaml**
 
 Deploy the Ingress controller manifests
 
