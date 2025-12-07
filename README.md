@@ -1,3 +1,7 @@
+Get the password of jenkins Admin kubectl exec -it jenkins-6c77469fc-p55ll -n devops-tools -- cat /var/jenkins_home/secrets/initialAdminPassword
+
+Jenkins kubernetes link: https://www.jenkins.io/doc/book/installing/kubernetes/
+
 Below is a sample Ingress YAML and step-by-step instructions to install an Ingress controller (NGINX) and expose your Jenkins service using Ingress.
 
 1. Sample Ingress YAML
