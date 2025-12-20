@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: jenkins-service
+                name: jenkins
                 port:
                   number: 8080
   tls:
