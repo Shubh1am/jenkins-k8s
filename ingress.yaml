@@ -6,6 +6,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - host: jenkins.local
       http:
@@ -21,6 +22,7 @@ spec:
     - hosts:
         - jenkins.local
       secretName: jenkins-tls
+
 
 # Alternative access methods:
 # 1. Use a NodePort service to access Jenkins via the node's IP and the assigned NodePort.
