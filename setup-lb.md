@@ -146,5 +146,5 @@ On self-hosted clusters, `context deadline exceeded` for a webhook usually point
 
 **Did deleting the webhook allow your `metallb-config.yaml` to finally apply?**
 
-INGRESS CONTROLLER: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
+**INGRESS CONTROLLER**: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
 
